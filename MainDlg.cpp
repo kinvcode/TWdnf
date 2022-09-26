@@ -31,6 +31,7 @@ void MainDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(MainDlg, CDialogEx)
 
+	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &MainDlg::OnTcnSelchangeTab1)
 END_MESSAGE_MAP()
 
 
@@ -99,4 +100,20 @@ void MainDlg::Log(CString msg)
 	m_ctl_console.ReplaceSel(msg);
 	m_ctl_console.SetSel(-1);
 	m_ctl_console.ReplaceSel(L"\r\n");
+}
+
+
+void MainDlg::OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	int index = m_ctl_tab.GetCurSel();
+	int count = m_ctl_tab.GetItemCount();
+
+	for (int i = 0; i < count; i++)
+	{
+		m_tab_box[i]->ShowWindow(SW_HIDE);
+	}
+
+	m_tab_box[index]->ShowWindow(SW_SHOW);
+
+	*pResult = 0;
 }

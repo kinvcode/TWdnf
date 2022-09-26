@@ -46,4 +46,5 @@ public:
 
 	// 功能
 	void initTabCtl();
+	afx_msg void OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult);
 };
