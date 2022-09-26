@@ -26,12 +26,15 @@ void MainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_EDIT1, m_ctl_console);
+	DDX_Control(pDX, IDC_TAB1, m_ctl_tab);
 }
 
 
 BEGIN_MESSAGE_MAP(MainDlg, CDialogEx)
 
 	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &MainDlg::OnTcnSelchangeTab1)
+	ON_WM_HOTKEY()
+	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -40,6 +43,8 @@ END_MESSAGE_MAP()
 BOOL MainDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+
+	initTabCtl();
 
 	// TODO: 在此添加额外的初始化代码
 	this->Log(L"辅助工具已加载");
@@ -74,7 +79,7 @@ void MainDlg::initTabCtl()
 	page3.Create(IDD_DIALOG_PAGE3, &m_ctl_tab);
 	CRect rc;
 	m_ctl_tab.GetClientRect(rc);
-	rc.top += 26;
+	rc.top += 20;
 	rc.bottom -= 0;
 	rc.left += 0;
 	rc.right -= 0;
@@ -116,4 +121,12 @@ void MainDlg::OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult)
 	m_tab_box[index]->ShowWindow(SW_SHOW);
 
 	*pResult = 0;
+}
+
+
+void MainDlg::OnHotKey(UINT nHotKeyId, UINT nKey1, UINT nKey2)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+
+	CDialogEx::OnHotKey(nHotKeyId, nKey1, nKey2);
 }

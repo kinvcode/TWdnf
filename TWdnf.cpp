@@ -61,6 +61,8 @@ DWORD WINAPI ThreadCallBack(LPARAM lparam)
 	HINSTANCE save_hInstance = AfxGetResourceHandle();
 	AfxSetResourceHandle(theApp.m_hInstance);
 
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
 	pMFCMainDialog = new MainDlg();
 	pMFCMainDialog->DoModal();//创建模态窗口 然后堵塞 等待窗口关闭后继续往下执行  
 	

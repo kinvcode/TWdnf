@@ -42,9 +42,10 @@ public:
 	CTabCtrl m_ctl_tab;// tab选项卡
 
 	void MainDlg::Log(CString msg);
-	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 
 	// 功能
 	void initTabCtl();
 	afx_msg void OnTcnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnHotKey(UINT nHotKeyId, UINT nKey1, UINT nKey2);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

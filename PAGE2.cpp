@@ -28,7 +28,14 @@ void PAGE2::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(PAGE2, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON1, &PAGE2::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
 // PAGE2 消息处理程序
+
+
+void PAGE2::OnBnClickedButton1()
+{
+	// TODO: 在此添加控件通知处理程序代码
+}
