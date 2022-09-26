@@ -30,7 +30,7 @@ void MainDlg::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(MainDlg, CDialogEx)
-	ON_BN_CLICKED(IDC_BUTTON1, &MainDlg::OnBnClickedButton1)
+
 END_MESSAGE_MAP()
 
 
@@ -72,16 +72,4 @@ void MainDlg::Log(CString msg)
 	m_ctl_console.ReplaceSel(msg);
 	m_ctl_console.SetSel(-1);
 	m_ctl_console.ReplaceSel(L"\r\n");
-}
-
-void MainDlg::OnBnClickedButton1()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	int user = 0x1AB7CDC;
-	
-	int address = *(int*)user + 0x2BEC;
-	
-	encrypt(address, 100);
-	
-	this->Log(msg);
 }
