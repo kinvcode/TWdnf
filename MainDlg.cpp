@@ -62,6 +62,33 @@ HBRUSH MainDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	return hbr;
 }
 
+void MainDlg::initTabCtl()
+{
+	// 初始化tab控件
+	m_ctl_tab.InsertItem(0, L"主界面");
+	m_ctl_tab.InsertItem(1, L"数据界面");
+	m_ctl_tab.InsertItem(2, L"地图遍历");
+	page1.Create(IDD_DIALOG_PAGE1, &m_ctl_tab);
+	page2.Create(IDD_DIALOG_PAGE2, &m_ctl_tab);
+	page3.Create(IDD_DIALOG_PAGE3, &m_ctl_tab);
+	CRect rc;
+	m_ctl_tab.GetClientRect(rc);
+	rc.top += 26;
+	rc.bottom -= 0;
+	rc.left += 0;
+	rc.right -= 0;
+	page1.MoveWindow(&rc);
+	page2.MoveWindow(&rc);
+	page3.MoveWindow(&rc);
+	page1.ShowWindow(SW_SHOW);
+	page2.ShowWindow(SW_HIDE);
+	page3.ShowWindow(SW_HIDE);
+	m_tab_box[0] = &page1;
+	m_tab_box[1] = &page2;
+	m_tab_box[2] = &page3;
+	m_cur_tab_index = 0;
+}
+
 // 日志输出
 void MainDlg::Log(CString msg)
 {

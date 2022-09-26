@@ -30,6 +30,15 @@
     <ClCompile Include="memory.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PAGE1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAGE2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAGE3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="TWdnf.def">
@@ -62,6 +71,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="memory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PAGE1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PAGE2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PAGE3.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

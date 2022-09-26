@@ -1,5 +1,8 @@
 ﻿#pragma once
 #include "afxdialogex.h"
+#include "PAGE1.h"
+#include "PAGE2.h"
+#include "PAGE3.h"
 
 // MainDlg 对话框
 
@@ -31,12 +34,16 @@ protected:
 public:
 
 	// tab页面
-	//PAGE1 page1;
-	//PAGE2 page2;
-	//PAGE3 page3;
+	PAGE1 page1;
+	PAGE2 page2;
+	PAGE3 page3;
 
-	CEdit m_ctl_console;
+	CEdit m_ctl_console;// 输出控制台
+	CTabCtrl m_ctl_tab;// tab选项卡
 
 	void MainDlg::Log(CString msg);
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+
+	// 功能
+	void initTabCtl();
 };
