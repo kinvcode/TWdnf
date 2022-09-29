@@ -74,9 +74,11 @@ void MainDlg::initTabCtl()
 	m_ctl_tab.InsertItem(0, L"主界面");
 	m_ctl_tab.InsertItem(1, L"数据界面");
 	m_ctl_tab.InsertItem(2, L"地图遍历");
+	m_ctl_tab.InsertItem(2, L"加密解密");
 	page1.Create(IDD_DIALOG_PAGE1, &m_ctl_tab);
 	page2.Create(IDD_DIALOG_PAGE2, &m_ctl_tab);
 	page3.Create(IDD_DIALOG_PAGE3, &m_ctl_tab);
+	page4.Create(IDD_DIALOG_PAGE4, &m_ctl_tab);
 	CRect rc;
 	m_ctl_tab.GetClientRect(rc);
 	rc.top += 20;
@@ -92,6 +94,7 @@ void MainDlg::initTabCtl()
 	m_tab_box[0] = &page1;
 	m_tab_box[1] = &page2;
 	m_tab_box[2] = &page3;
+	m_tab_box[3] = &page4;
 	m_cur_tab_index = 0;
 }
 

@@ -3,6 +3,7 @@
 #include "PAGE1.h"
 #include "PAGE2.h"
 #include "PAGE3.h"
+#include "PAGE4.h"
 
 // MainDlg 对话框
 
@@ -22,7 +23,7 @@ public:
 protected:
 
 	// tab控件容器
-	CDialog* m_tab_box[3];
+	CDialog* m_tab_box[4];
 	// tab控件当前索引
 	int m_cur_tab_index;
 	// 日志输出时间
@@ -37,6 +38,7 @@ public:
 	PAGE1 page1;
 	PAGE2 page2;
 	PAGE3 page3;
+	PAGE4 page4;
 
 	CEdit m_ctl_console;// 输出控制台
 	CTabCtrl m_ctl_tab;// tab选项卡
